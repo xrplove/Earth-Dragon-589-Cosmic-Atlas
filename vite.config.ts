@@ -3,14 +3,16 @@ import { join } from 'node:path'
 import { defineConfig } from 'vite'
 
 /**
- * Local checkouts may still hold Solar System Scope source archives under
- * public/textures/. Vite copies public/ into dist/ wholesale, so a production
- * build would otherwise ship hundreds of MB that the loader never requests.
- * GitHub deploys never see those dirs (.gitignore); this covers the local path.
+ * Local checkouts may still hold Solar System Scope
+ * public/textures/. Vite copies public/ into dist/
+ * build would otherwise ship hundreds of MB that th
+ * 【entity-GitHub¦canonical_name=GitHub】 deploys never see those dirs (.gitignore);
  */
-const TEXTURE_ARCHIVES = ['full8k', 'raw8k', 'hd8k', 'hd', 'raw'] as const
+
+const TEXTURE_ARCHIVES = ['full8k', 'raw8k', 'hd8k']
 
 export default defineConfig({
+  base: '/Earth-Dragon-589-Cosmic-Atlas/',
   plugins: [
     {
       name: 'omit-texture-archives',
